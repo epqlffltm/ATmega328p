@@ -19,11 +19,25 @@ int main(void)
 	DDRC &= ~(1<<PC5);//clear
 	PORTC |= (1<<PC5);//set -> pull-up 사용
 	MCUCR &= ~(1<<PUD);//pull-up disable을 0으로
+	uint8_t flag = 0;
+	
     while (1) 
     {
 		if(!(PINC & (1<<PC5)))
 		{
+			_delay_ms(20);
 			//PC5의 스위치가 눌렸다면
+			//PORTB |= (1<<PB5);
+			if(!(PINC & (1<<PC5)))
+			{
+				flag ^= 1;//flag가 1이면 0, 아니면 1
+				
+			}
+		}
+		
+		if(flag == 1)
+		{
+			
 			PORTB |= (1<<PB5);
 		}
 		else
@@ -31,6 +45,7 @@ int main(void)
 			//PC5의 스위치가 눌리지 않았다면
 			PORTB &= ~(1<<PB5);
 		}
+		_delay_ms(20);
     }
 }
 
