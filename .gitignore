@@ -39,3 +39,14 @@ ipch/
 *.swp
 .DS_Store
 Thumbs.db
+
+# KiCad temp / backup
+**/*.bak
+**/*.tmp
+**/*-cache.lib
+**/fp-info-cache
+**/*.kicad_sch-bak
+**/*.kicad_pcb-bak
+**/*-backups/
+**/*backups*/
+**/*.zip
