@@ -1,0 +1,3 @@
+'D:\study\MCU\ATmega328p\schematic\03_GPIO_led\03_GPIO_led.svg'에 플롯됨.
+정보: 완료.
+정보: 완료.
